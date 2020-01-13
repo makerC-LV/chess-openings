@@ -6,17 +6,19 @@ body {
 .flex-container {
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
 }
 
 .flex-item {
     border: solid black 2px;
+
 }
 
 
 
 .board-wrapper {
     width: 380px;
-    height: 400px;
+    min-height: 400px;
     margin: 5px 5px;
     /* display: inline-block;
     vertical-align: top; */
@@ -24,7 +26,7 @@ body {
 .pgn-wrapper {
     flex: 1;
     margin: 5px 5px;
-    height: 600px;
+    height: 95vh;
     display: inline-block; 
     /*padding: 2%;
     border: solid black 2px;
@@ -34,7 +36,7 @@ body {
 @media screen and (min-width: 480px) {
     .board-wrapper {
         width: 500 px;
-        height: 600 px;
+        min-height: 600 px;
     }
 
     .pgn-wrapper {
@@ -45,11 +47,13 @@ body {
 .pgndisplay {
     background-color: darkslategrey;
     color: darkorange;
+    height: calc(95vh - 38px);
     overflow: auto;
     
 }
 
 .fen {
+    word-break: break-all;
     background-color: darkslategrey;
     color: beige;
     font-family: monospace;
