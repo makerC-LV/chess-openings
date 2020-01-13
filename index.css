@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-item {
+    border: solid black 2px;
+}
+
+
+
+.board-wrapper {
+    width: 380px;
+    height: 400px;
+    margin: 5px 5px;
+    /* display: inline-block;
+    vertical-align: top; */
+}
+.pgn-wrapper {
+    flex: 1;
+    margin: 5px 5px;
+    height: 600px;
+    display: inline-block; 
+    /*padding: 2%;
+    border: solid black 2px;
+     */
+}
+
+@media screen and (min-width: 480px) {
+    .board-wrapper {
+        width: 500 px;
+        height: 600 px;
+    }
+
+    .pgn-wrapper {
+
+    }
+  }
+
+.pgndisplay {
+    background-color: darkslategrey;
+    color: darkorange;
+    overflow: auto;
+    
+}
+
+.fen {
+    background-color: darkslategrey;
+    color: beige;
+    font-family: monospace;
+    font-size: 12pt;
+    margin-top: 10px;
+    padding: 5px 5px;
+}
+
+
+
+.displayable {
+    display: inline-block;
+    margin: 0 4px;
+}
+
+.currentmove {
+    background-color: dimgray;
+}
+
+.played {
+    color: silver;
+}
+
+.unplayed {
+    color: beige
+}
+.move {
+    
+}
+
+.comment {
+    font-style: italic;
+    color: darkorange
+}
+
+.variation {
+    display: block !important;
+    margin-left: 30px;
+}
+
+.level0 {
+    font-size: 16pt;
+}
+
+.level1 {
+    font-size: 14pt;
+}
+
+.level2 {
+    font-size: 12pt;
+}
+

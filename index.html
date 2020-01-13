@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./assets/chessground.css">
+    <link rel="stylesheet" href="./assets/theme.css">
+    <link rel="stylesheet" href="./index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="flex-container">
+        <div class="blue merida board-wrapper flex-item">
+            <div id="dirty" class="cg-wrap"></div>
+            <div id="fen" class="fen"></div>
+        </div>
+        <div id="pgn-wrapper" class="pgn-wrapper flex-item">
+            <div>
+                <div id="game-select"></div>
+                <button onclick="onPlay()">Play</button>
+                <button onclick="onHint()">Hint</button>
+                <input type="checkbox" onchange="onAutoCheckbox(this)" /><label>AutoPlay</label>
+                <input type="checkbox" onchange="onPGNCheckbox(this)" /><label>Hide PGN</label>
+            </div>
+            <div id="pgndisplay" class="pgndisplay"></div>
+        </div>
+    </div>
+
+    <script src="./assets/libs/chessground.js"></script>
+    <script src="./assets/libs/chess.min.js"></script>
+    <script src="./assets/libs/peg-0.10.0.js"></script>
+    <script src="./pgnparser.js"></script>
+    <script src="./games.js"></script>
+    <script src="./showpgn.js"></script>
+    <script src="./app.js"></script>
+    <script src="./select.js"></script>
+
+
+
+</body>
+
+</html>
