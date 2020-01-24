@@ -12,6 +12,11 @@
 </head>
 
 <body>
+    <nav><ul>
+        <li><a href="/index.html">Practice</a></li>
+        <li><a href="/merge.html">Merge PGN</a></li>
+        <li><a href="/">Dummy</a></li>
+    </ul></nav>
     <div class="flex-container">
         <div class="blue merida board-wrapper flex-item">
             <div id="dirty" class="cg-wrap"></div>
@@ -20,23 +25,24 @@
         <div id="pgn-wrapper" class="pgn-wrapper flex-item">
             <div>
                 <div id="game-select"></div>
-                <button onclick="onPlay()">Play</button>
-                <button onclick="onHint()">Hint</button>
-                <input type="checkbox" onchange="onAutoCheckbox(this)" /><label>AutoPlay</label>
-                <input type="checkbox" onchange="onPGNCheckbox(this)" /><label>Hide PGN</label>
+                <button id="play">Play</button>
+                <button id="hint">Hint</button>
+                <input id="autoplay" type="checkbox" /><label>AutoPlay</label>
+                <input id="hidepgn" type="checkbox" /><label>Hide PGN</label>
             </div>
             <div id="pgndisplay" class="pgndisplay"></div>
         </div>
     </div>
 
+    <!--
     <script src="./assets/libs/chessground.js"></script>
     <script src="./assets/libs/chess.min.js"></script>
     <script src="./assets/libs/peg-0.10.0.js"></script>
     <script src="./pgnparser.js"></script>
-    <script src="./games.js"></script>
     <script src="./showpgn.js"></script>
+    -->
+
     <script src="./app.js"></script>
-    <script src="./select.js"></script>
 
 
 

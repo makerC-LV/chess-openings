@@ -1,8 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
 }
 
+nav>ul {
+    list-style: none;
+}
+
+nav>ul>li {
+    display: inline-block;
+}
+
+button {
+    font-size: 1.1em;
+}
+
+select {
+    font-size: 1em;
+}
 .flex-container {
     display: flex;
     flex-wrap: wrap;
@@ -49,7 +68,7 @@ body {
     color: darkorange;
     height: calc(95vh - 38px);
     overflow: auto;
-    
+    position: relative;
 }
 
 .fen {
@@ -64,7 +83,7 @@ body {
 
 
 
-.displayable {
+.pgnelement {
     display: inline-block;
     margin: 0 4px;
 }

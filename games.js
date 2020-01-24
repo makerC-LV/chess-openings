@@ -92,3 +92,5 @@ let gamemap = {
         'engineColor': 'black'
     }
 }
+
+exports.gamemap = gamemap

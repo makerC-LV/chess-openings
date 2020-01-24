@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/chessground.css">
+    <link rel="stylesheet" href="./assets/theme.css">
+    <link rel="stylesheet" href="./index.css">
+
+    <title>Practice</title>
+</head>
+<body>
+    <nav><ul>
+        <li><a href="/">Practice</a></li>
+        <li><a href="/">Merge PGN</a></li>
+        <li><a href="/">Dummy</a></li>
+    </ul></nav>
+    <div class="flex-container">
+        <div class="blue merida board-wrapper flex-item">
+            <div id="dirty" class="cg-wrap"></div>
+            <div id="fen" class="fen"></div>
+        </div>
+        <div id="pgn-wrapper" class="pgn-wrapper flex-item">
+            <div>
+                <div id="game-select"></div>
+                <button class="fa fa-car" id="play">Play</button>
+                <button class="fa fa-info" id="hint">Hint</button>
+                <input id="autoplay" type="checkbox" /><label>AutoPlay</label>
+                <input id="hidepgn" type="checkbox" /><label>Hide PGN</label>
+            </div>
+            <div id="pgndisplay" class="pgndisplay"></div>
+        </div>
+    </div>
+    <script src="./views/practice-view.js"></script>
+</body>
+</html>

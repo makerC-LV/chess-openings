@@ -1,0 +1,25 @@
+{
+  "name": "chess-openings",
+  "version": "1.0.0",
+  "description": "Chess openings trainer",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/makerC-LV/chess-openings.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/makerC-LV/chess-openings/issues"
+  },
+  "homepage": "https://github.com/makerC-LV/chess-openings#readme",
+  "dependencies": {
+    "chess.js": "^0.10.2",
+    "pegjs": "^0.10.0",
+    "redux": "^4.0.5"
+  }
+}
