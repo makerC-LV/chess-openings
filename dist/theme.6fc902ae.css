@@ -2,45 +2,45 @@
  * Board
  */
 .blue .cg-wrap {
-  background-image: url('chess-openings/blue.ef9e8401.svg');
+  background-image: url('blue.ef9e8401.svg');
 }
 
 .merida .cg-wrap piece.pawn.white {
-  background-image: url('chess-openings/wP.444da911.svg');
+  background-image: url('wP.444da911.svg');
 }
 .merida .cg-wrap piece.bishop.white {
-  background-image: url('chess-openings/wB.052b1c9e.svg');
+  background-image: url('wB.052b1c9e.svg');
 }
 .merida .cg-wrap piece.knight.white {
-  background-image: url('chess-openings/wN.02ede491.svg');
+  background-image: url('wN.02ede491.svg');
 }
 .merida .cg-wrap piece.rook.white {
-  background-image: url('chess-openings/wR.6cef3b9e.svg');
+  background-image: url('wR.6cef3b9e.svg');
 }
 .merida .cg-wrap piece.queen.white {
-  background-image: url('chess-openings/wQ.deaa069a.svg');
+  background-image: url('wQ.deaa069a.svg');
 }
 .merida .cg-wrap piece.king.white {
-  background-image: url('chess-openings/wK.5c1bc538.svg');
+  background-image: url('wK.5c1bc538.svg');
 }
 .merida .cg-wrap piece.pawn.black {
-  background-image: url('chess-openings/bP.51ff55f2.svg');
+  background-image: url('bP.51ff55f2.svg');
 }
 .merida .cg-wrap piece.bishop.black {
-  background-image: url('chess-openings/bB.aab249a7.svg');
+  background-image: url('bB.aab249a7.svg');
 }
 .merida .cg-wrap piece.knight.black {
-  background-image: url('chess-openings/bN.39a5d9a5.svg');
+  background-image: url('bN.39a5d9a5.svg');
 }
 .merida .cg-wrap piece.rook.black {
-  background-image: url('chess-openings/bR.f6deb776.svg');
+  background-image: url('bR.f6deb776.svg');
 }
 .merida .cg-wrap piece.queen.black {
-  background-image: url('chess-openings/bQ.ff24d9a8.svg');
+  background-image: url('bQ.ff24d9a8.svg');
 }
 .merida .cg-wrap piece.king.black {
-  background-image: url('chess-openings/bK.bfafdbd9.svg');
+  background-image: url('bK.bfafdbd9.svg');
 }
 
 
-/*# sourceMappingURL=chess-openings/theme.6fc902ae.css.map */
+/*# sourceMappingURL=theme.6fc902ae.css.map */
