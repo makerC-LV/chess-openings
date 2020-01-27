@@ -4,7 +4,6 @@ import { gameChangedAction, autoPlayChangedAction, hidePgnChangedAction, hintCli
 import { configureButton, copyToClipboard } from '../utils/documentutils'
 import { practiceStore as store } from '../store'
 import { getPGNText } from '../utils/showpgn'
-import { copyToClipboard } from '../utils/documentutils'
 
 export const init = (selectDivId) => {
     configureSelect(selectDivId, store)

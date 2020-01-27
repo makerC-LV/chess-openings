@@ -13620,11 +13620,7 @@ function configureButtons() {
         currentRoot = _store$getState.currentRoot;
 
     var text = (0, _showpgn.getPGNText)(currentRoot);
-    navigator.clipboard.writeText(text).then(function () {
-      console.log('Async: Copying to clipboard was successful!');
-    }, function (err) {
-      console.error('Async: Could not copy text: ', err);
-    });
+    (0, _documentutils.copyToClipboard)(text);
   });
 }
 
@@ -13827,7 +13823,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53122" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51181" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
