@@ -1,13 +1,12 @@
 
 import Chessground from '../assets/libs/chessground'
-import store from '../store'
 import { findNext, updatePlayedStatus } from '../utils/pgnutils'
 import { isEngineMove }  from '../utils/gameutils'
 import {playerMadeMoveAction} from '../actions/game-actions'
 
 
 
-export const init = (boardId, nextFunc) => {
+export const init = (boardId, nextFunc, store) => {
 
     let ground
 
@@ -19,7 +18,7 @@ export const init = (boardId, nextFunc) => {
             // change: onchange, // called after the situation changes on the board
             // called after a piece has been moved.
             // capturedPiece is undefined or like {color: 'white'; 'role': 'queen'}
-            move: (orig, dest, capturedPiece) => onMove(orig, dest, capturedPiece, nextFunc),
+            move: (orig, dest, capturedPiece) => onMove(orig, dest, capturedPiece, nextFunc, store),
             // dropNewPiece: onDropNewPiece,
             // select: onSelect, // called when a square is selected
             // insert: onInsert // when the board DOM has been (re)inserted
@@ -63,7 +62,7 @@ function getHintShapes(current) {
     
 }
 
-function onMove(orig, dest, capturedPiece, nextFunc) {
+function onMove(orig, dest, capturedPiece, nextFunc, store) {
     let {current} = store.getState()
     let next = nextFunc(orig, dest)
 

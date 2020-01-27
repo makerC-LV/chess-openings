@@ -1,9 +1,8 @@
 
-import store from '../store'
 import { displayFormattedPgn } from '../utils/showpgn'
 import { positionChangedAction } from '../actions/game-actions'
 
-export const init = (divId) => {
+export const init = (divId, store) => {
 
     const onClick = (node) => {
         store.dispatch(positionChangedAction(node))

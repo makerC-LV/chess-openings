@@ -101,7 +101,8 @@ move = mn:move_number?
        whitespace*
        m:half_move 
        nags:(whitespace+ n:nag {return n})*
-       com:(whitespace+ c2:comment {return c2})? 
+       com:(whitespace+ c2:comment {return c2})?
+       (whitespace+ comment)*
        ravs:(whitespace+ r:rav {return r})*
        {return make_move(mn, m, nags, ravs, com)}
 
@@ -137,9 +138,14 @@ export const  parsepgn = (pgn) => {
     console.log("Base structure:", r1)
     // pprint(r1.moves, "")
     let game = Chess()
-    let root = { fen: game.fen(), children: [], played: new Set()}
-    if (r1.moves.length > 0) {
-        convert(r1.moves.slice(), game, root)
+    return parseOneGame(r1, game)
+}
+
+function parseOneGame(baseGame, game) {
+    game.reset()
+    let root = { fen: game.fen(), children: [], played: new Set(), move_number:0}
+    if (baseGame.moves.length > 0) {
+        convert(baseGame.moves.slice(), game, root)
     }
     return root
 }
@@ -185,25 +191,25 @@ export const addNode = (node, parent, comment, nags, moveNum) => {
 
 export const deleteNode = (node) => {
     if (node.parent) {
-        let index = parent.children.indexOf(node);
+        let index = node.parent.children.indexOf(node);
         if (index !== -1) {
-            parent.children.splice(index, 1);
+            node.parent.children.splice(index, 1);
         }
     }
 }
 
 export const promoteNode = (node) => {
     if (node.parent) {
-        let index = parent.children.indexOf(node);
+        let index = node.parent.children.indexOf(node);
         if (index !== -1) {
-            parent.children.splice(index, 1);
+            node.parent.children.splice(index, 1);
         }
-        parent.children.unshift(node)
+        node.parent.children.unshift(node)
     }
 }
 
 export const addCommentAndNags = (node, comment, nags) => {
-    if (comment) {
+    if (comment && comment.indexOf('[%') < 0) {
         node.comment = comment
     }
     if (nags) {
@@ -230,6 +236,16 @@ export const allChildrenPlayed = (node) => {
     return true
 }
 
+export const  parseMultiple = (multipgn) => {
+    let games = parser.parse(multipgn)
+    let game = Chess()
+    let root = parseOneGame(games[0], game)
+    for (let i = 1; i < games.length; i++) {
+        let newRoot = parseOneGame(games[i], game)
+        mergeTrees(root, newRoot)
+    }
+    return root
+}
 
 export const mergeTrees = (node1, node2) => {
     console.log(node1.san, node2.san)

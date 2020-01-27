@@ -1,8 +1,9 @@
 import Board from '../components/chessboard'
 import PControls from '../components/practice-controls'
 import PGNView from '../components/pgnviewer'
+import Fen from '../components/fen'
 
-import store from '../store'
+import { practiceStore as store}  from '../store'
 import { isEngineMove as isEnginesTurn } from '../utils/gameutils'
 import { positionChangedAction } from '../actions/game-actions'
 import { findNext } from '../utils/pgnutils'
@@ -67,8 +68,9 @@ const makeNextMove = function() {
 };
 
 PControls.init('game-select')
-PGNView.init('pgndisplay')
-let ground = Board.init('dirty', computeNewPosition)
+PGNView.init('pgndisplay', store)
+Fen.init('fen', store)
+Board.init('dirty', computeNewPosition, store)
 
 store.subscribe(() => {
     triggerEngineMove()

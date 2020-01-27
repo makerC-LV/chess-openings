@@ -1,8 +1,11 @@
 import { createStore } from 'redux'
-import { POSITION_CHANGED, GAME_CHANGED, PLAYER_MADE_MOVE, ENGINE_MADE_MOVE, HIDE_PGN_CHANGED, AUTOPLAY_CHANGED, HINT_CLICKED } from '../actions/game-actions'
-import {findNext} from '../utils/pgnutils'
+import { POSITION_CHANGED, GAME_CHANGED, PLAYER_MADE_MOVE, HIDE_PGN_CHANGED, 
+    AUTOPLAY_CHANGED, HINT_CLICKED, BOARD_FLIPPED } 
+    from '../actions/game-actions'
+import {findNext, parsepgn} from '../utils/pgnutils'
+import { gamemap } from '../games'
 
-let initialState = {
+let initialStatePractice = {
     currentRoot: null,
     current: null,
     engineColor: 'white',
@@ -10,8 +13,26 @@ let initialState = {
     autoPlay: false,
     hint: false
 }
+let emptyTree = parsepgn(gamemap['Select a game']['pgn'])
 
-const reducer = (state = initialState, action) => {
+let initialStateEdit = {
+    currentRoot: emptyTree,
+    current: emptyTree,
+    engineColor: 'black',
+    hidePGN: false,
+    autoPlay: false,
+    hint: false
+}
+
+const practiceReducer = (state=initialStatePractice, action) => {
+    return reducer(state, action)
+}
+
+const editReducer = (state=initialStateEdit, action) => {
+    return reducer(state, action)
+}
+
+const reducer = (state, action) => {
     switch (action.type) {
         case POSITION_CHANGED: return { ...state, hint: false, current: action.node }
         case GAME_CHANGED: return {
@@ -24,28 +45,30 @@ const reducer = (state = initialState, action) => {
         case PLAYER_MADE_MOVE:
             return { ...state, current: action.newCurrent }
 
-        case ENGINE_MADE_MOVE: return engine.moveMade(state, action)
-
         case HIDE_PGN_CHANGED: return { ...state, hidePGN: action.checked }
 
         case AUTOPLAY_CHANGED: return { ...state, autoPlay: action.checked }
 
         case HINT_CLICKED: return { ...state, hint: true }
 
+        case BOARD_FLIPPED: return {...state, engineColor: action.checked? 'white' : 'black'}
+
         default: return state
     }
 }
 
+export const practiceStore = createStore(practiceReducer)
 
+export const editStore = createStore(editReducer)
 
-
-const store = createStore(reducer)
-
-let currentState = initialState
-store.subscribe(() => {
-    let state = store.getState()
+let currentState = initialStateEdit
+editStore.subscribe(() => {
+    let state = editStore.getState()
     console.log(currentState, state)
     currentState = state
 })
 
-export default store
+
+
+
+

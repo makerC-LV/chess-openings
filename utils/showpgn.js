@@ -114,3 +114,41 @@ function nodeId(node) {
     }
     return id ? id : 'ROOT'
 }
+
+let pgnBuffer
+
+export const getPGNText = (root) => {
+    pgnBuffer = ""
+    writePGN(root.children[0], "", true, "  ")
+    return pgnBuffer
+}
+
+const writePGN = (node, currentIndent, writeNodeFirst, indent) => {
+    if (writeNodeFirst) {
+        writeNode(node)
+    }
+    if (node.children.length > 1) {
+        writeNode(node.children[0])
+        for (var i = 1; i < node.children.length; i++) {
+            pgnBuffer += ('\n' + currentIndent + ' (')
+            writePGN(node.children[i], currentIndent + indent, true, indent)
+            pgnBuffer += ('\n' + currentIndent + ') ')
+        }
+        writePGN(node.children[0], currentIndent, false, indent)
+    } else if (node.children.length > 0) {
+        writePGN(node.children[0], currentIndent, true, indent)
+    }
+}
+
+const writeNode = (node) => {
+    if (node.color == 'w') {
+        pgnBuffer += (node.move_number + ".")
+    } else if (firstInVariation(node) ||
+                firstAfterVariation(node)) {
+        pgnBuffer += (node.move_number + "...")
+    }
+    pgnBuffer += (node.san + ' ')
+    if (node.comment) {
+        pgnBuffer += [' {', node.comment, '} '].join(' ')
+    }
+}

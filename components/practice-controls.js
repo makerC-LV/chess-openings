@@ -1,11 +1,14 @@
 import { parsepgn } from '../utils/pgnutils'
 import { gamemap } from '../games'
-import store from '../store'
 import { gameChangedAction, autoPlayChangedAction, hidePgnChangedAction, hintClickedAction } from '../actions/game-actions'
+import { configureButton, copyToClipboard } from '../utils/documentutils'
+import { practiceStore as store } from '../store'
+import { getPGNText } from '../utils/showpgn'
+import { copyToClipboard } from '../utils/documentutils'
 
 export const init = (selectDivId) => {
-    configureSelect(selectDivId)
-    configureButtons()
+    configureSelect(selectDivId, store)
+    configureButtons(store)
 }
 
 
@@ -25,21 +28,25 @@ function configureSelect(divId) {
 
 }
 
-function onSelect(event, setGame) {
+function onSelect(event) {
 
     let pgn = gamemap[event.target.value]
     let root = parsepgn(pgn['pgn'])
     store.dispatch(gameChangedAction(root, pgn['engineColor']))
-    // console.log(result)
-    // setGame(result, pgn['engineColor'])
 
 }
 
 function configureButtons() {
-    document.getElementById('play').addEventListener("click", () => {})
-    document.getElementById('hint').addEventListener("click", event => store.dispatch(hintClickedAction()))
-    document.getElementById('autoplay').addEventListener("change", event => store.dispatch(autoPlayChangedAction(event.target.checked)))
-    document.getElementById('hidepgn').addEventListener("change", event => store.dispatch(hidePgnChangedAction(event.target.checked)))
+    configureButton('play', () => { console.log('Play') })
+    configureButton('hint', event => store.dispatch(hintClickedAction()))
+    configureButton('autoplay', event => store.dispatch(autoPlayChangedAction(event.target.checked)))
+    configureButton('hidepgn', event => store.dispatch(hidePgnChangedAction(event.target.checked)))
+    configureButton('copy', event => {
+        let {currentRoot} = store.getState()
+        let text = getPGNText(currentRoot)
+        copyToClipboard(text)
+        
+    })
 }
 
-export default {init}
+export default { init }

@@ -18,11 +18,6 @@ export const playerMadeMoveAction = (newCurrent) => ({
     type: PLAYER_MADE_MOVE, newCurrent
 })
 
-export const ENGINE_MADE_MOVE = 'engineMadeMove'
-
-export const engineMadeMoveAction = (orig, dest, capturedPiece) => ({
-    type: ENGINE_MADE_MOVE, orig, dest, capturedPiece
-})
 
 export const HIDE_PGN_CHANGED = 'hidePgnChanged'
 
@@ -39,4 +34,10 @@ export const autoPlayChangedAction = (checked) => ({
 export const HINT_CLICKED = 'hintClicked'
 export const hintClickedAction = () => ({
     type: HINT_CLICKED
+})
+
+export const BOARD_FLIPPED = 'boardFlipped'
+
+export const boardFlippedAction = (checked) => ({
+    type: BOARD_FLIPPED, checked
 })
