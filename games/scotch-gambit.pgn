@@ -1,0 +1,33 @@
+[White "me"]
+[Black "you"]
+ 1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4  {  If you had seen this, i hope you enjoy the scotch gambit. And if you like this and find it useful, pls leave a like and share this study. If it goes well i would do another one, i hope you enjoy this!  } Bc5  {  Black protects the pawn  } 
+ (Bb4+ 5.c3 dxc3 6.bxc3 Bc5  {  we can attack the same way  } 
+   (6...Ba5 7.O-O 
+  ) 
+   (6...Bd6 7.O-O 
+  ) 
+   (6...Bf8  {  blunder, black failed to develop pieces  } 
+  ) 7.Bxf7+ Kxf7 8.Qd5+  {  the king would be chased all over  } 
+) 
+ (Be7 5.c3 
+   (5.O-O  {  white is ready to develop pieces  } 
+  ) 5...dxc3 
+   (5...Nf6 6.e5 Ne4 
+     (6...d5  {  this is a blunder  } 7.exf6 dxc4 8.fxe7 
+    ) 7.Bd5 
+  ) 6.Qd5 Nh6  {  best way to defend  } 7.Bxh6 O-O  {  best move for black yet losing material  } 8.Nxc3 gxh6 9.Qh5  {  the bishop can be sacrificed for aggressive advantage, black can't hold on for long  } 
+) 
+ (Nf6 5.e5 Ng4  {  the strongest defence for black  } 
+   (5...Ne4 
+  ) 6.O-O Ngxe5 7.Nxe5 Nxe5 8.Re1  {  this pins the knight  } d6  {  protects  } 9.f4  {  the knight is now lost, leading to material advantage  } 
+) 5.Ng5  {  Attacks f7  } 
+ (5.c3 dxc3 
+   (5...Nf6 6.e5 Ng8  {  causing lost of momentum  } 
+  ) 6.Bxf7+ Kf8 
+   (6...Kxf7 7.Qd5+ Kg6  {  worst move  } 
+     (7...Kf6 8.Bg5+ Kg6 9.Qf5+ Kh5 10.g4# 
+    ) 
+     (7...Ke8  {  safest move  } 8.Qxc5 
+    ) 8.Qf5# 
+  ) 7.Nxc3  {  White has better development  } 
+) 5...Nh6 6.Qh5  {  Aggressive but easily stabilised  } * 
