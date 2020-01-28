@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+nav>ul {
+    list-style: none;
+}
+
+nav>ul>li {
+    display: inline-block;
+}
+
+#multipurpose-textarea {
+    width: 100%;
+    background-color: bisque;
+}
+
+
+
+
+.icon-but {
+    font-size: 18pt;
+}
+
+.pgn-toolbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.board-controls {
+    padding: 12px 12px;
+}
+select {
+    font-size: 1em;
+}
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.flex-item {
+    border: solid black 2px;
+
+}
+
+
+
+.board-wrapper {
+    width: 380px;
+    min-height: 400px;
+    margin: 5px 5px;
+    /* display: inline-block;
+    vertical-align: top; */
+}
+.pgn-wrapper {
+    flex: 1;
+    margin: 5px 5px;
+    height: 95vh;
+    display: inline-block; 
+    /*padding: 2%;
+    border: solid black 2px;
+     */
+}
+
+@media screen and (min-width: 480px) {
+    .board-wrapper {
+        width: 500 px;
+        min-height: 600 px;
+    }
+
+    .pgn-wrapper {
+
+    }
+  }
+
+.pgndisplay {
+    background-color: darkslategrey;
+    color: darkorange;
+    height: calc(95vh - 38px);
+    overflow: auto;
+    position: relative;
+}
+
+.fen {
+    word-break: break-all;
+    background-color: darkslategrey;
+    color: beige;
+    font-family: monospace;
+    font-size: 12pt;
+    margin-top: 10px;
+    padding: 5px 5px;
+}
+
+
+
+.pgnelement {
+    display: inline-block;
+    margin: 0 4px;
+}
+
+.currentmove {
+    background-color: dimgray;
+}
+
+.played {
+    color: cyan;
+}
+
+.unplayed {
+    color: beige
+}
+.move {
+    
+}
+
+.comment {
+    font-style: italic;
+    color: darkorange
+}
+
+.variation {
+    display: block !important;
+    margin-left: 30px;
+}
+
+.level0 {
+    font-size: 16pt;
+}
+
+.level1 {
+    font-size: 14pt;
+}
+
+.level2 {
+    font-size: 12pt;
+}
+
+
+
+/*# sourceMappingURL=/chess-openings.9ad09f98.css.map */
