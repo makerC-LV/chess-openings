@@ -113,23 +113,41 @@ let budapest_gambit =`
   ) 7.Nxc3  {  White has better development  } 
 ) 5...Nh6 6.Qh5  {  Aggressive but easily stabilised  } * `
 
+// let gamemap = {
+//     "Select a game" : {
+//         'pgn': '[White "me"]\n[Black "you"]\n *',
+//         'engineColor': 'black'
+//     },
+//     "Budapest gambit" : {
+//         'pgn': budapest_gambit,
+//         'engineColor': 'white'
+//     },
+//     "Scotch gambit" : {
+//         'pgn': scotch_gambit,
+//         'engineColor': 'black'
+//     },
+//     "Test game": {
+//         'pgn': test_game,
+//         'engineColor': 'black'
+//     }
+// }
+
 let gamemap = {
     "Select a game" : {
-        'pgn': '[White "me"]\n[Black "you"]\n *',
+        'pgn': 'empty-game.pgn',
         'engineColor': 'black'
     },
     "Budapest gambit" : {
-        'pgn': budapest_gambit,
+        'pgn': 'budapest-gambit.pgn',
         'engineColor': 'white'
     },
     "Scotch gambit" : {
-        'pgn': scotch_gambit,
+        'pgn': 'scotch-gambit.pgn',
         'engineColor': 'black'
     },
     "Test game": {
-        'pgn': test_game,
+        'pgn': 'test-game.pgn',
         'engineColor': 'black'
     }
 }
-
 exports.gamemap = gamemap

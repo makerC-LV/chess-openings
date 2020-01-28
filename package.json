@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "push-gh-pages": "git subtree push --prefix dist origin gh-pages",
-    "watch": "parcel practice.html",
+    "watch": "mkdir -p dist; cp -r games dist; parcel practice.html",
     "build": "parcel build practice.html --public-url ./",
-    "deploy": "parcel build practice.html --public-url ./ ; git subtree push --prefix dist origin gh-pages"
+    "deploy": "rm -rf dist; mkdir -p dist; cp -r games dist; parcel build practice.html --public-url ./ ; git add dist/* ; git commit -m \"Deploy\" ; git push ; git subtree push --prefix dist origin gh-pages"
   },
   "repository": {
     "type": "git",

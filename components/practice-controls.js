@@ -12,6 +12,7 @@ export const init = (selectDivId) => {
 
 
 function configureSelect(divId) {
+
     let seldiv = document.getElementById(divId)
     let sel = document.createElement("select")
 
@@ -28,10 +29,21 @@ function configureSelect(divId) {
 }
 
 function onSelect(event) {
-
+    console.log('onSelect')
     let pgn = gamemap[event.target.value]
-    let root = parsepgn(pgn['pgn'])
-    store.dispatch(gameChangedAction(root, pgn['engineColor']))
+    let file = './games/' + pgn['pgn']
+    console.log(file)
+    fetch(file)
+        .then((response) => {
+            console.log("Response is:")
+            console.log(response)
+            return response.text();
+        })
+        .then((text) => {
+            console.log(text);
+            let root = parsepgn(text)
+            store.dispatch(gameChangedAction(root, pgn['engineColor']))
+        })
 
 }
 
@@ -41,10 +53,10 @@ function configureButtons() {
     configureButton('autoplay', event => store.dispatch(autoPlayChangedAction(event.target.checked)))
     configureButton('hidepgn', event => store.dispatch(hidePgnChangedAction(event.target.checked)))
     configureButton('copy', event => {
-        let {currentRoot} = store.getState()
+        let { currentRoot } = store.getState()
         let text = getPGNText(currentRoot)
         copyToClipboard(text)
-        
+
     })
 }
 
