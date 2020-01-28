@@ -3,13 +3,13 @@ import PControls from '../components/practice-controls'
 import PGNView from '../components/pgnviewer'
 import Fen from '../components/fen'
 
-import { practiceStore as store}  from '../store'
+import { practiceStore as store } from '../store'
 import { isEngineMove as isEnginesTurn } from '../utils/gameutils'
 import { positionChangedAction } from '../actions/game-actions'
-import { findNext } from '../utils/pgnutils'
+import { findNext, updatePlayedStatus } from '../utils/pgnutils'
 
 const computeNewPosition = (orig, dest) => {
-    let {current, engineColor, autoPlay} = store.getState()
+    let { current, engineColor, autoPlay } = store.getState()
     let next = findNext(current, orig, dest)
     if (next) {
         current = next
@@ -19,10 +19,11 @@ const computeNewPosition = (orig, dest) => {
 
 let localCurrent = null
 const triggerEngineMove = () => {
-    let {currentRoot, current, engineColor, autoPlay} = store.getState()
+    let { currentRoot, current, engineColor, autoPlay } = store.getState()
     // exit if the game is over
     if (current.children.length === 0) {
         console.log("End of variation")
+        updatePlayedStatus(current)
         window.setTimeout(() => {
             store.dispatch(positionChangedAction(currentRoot))
         }, 2000)
@@ -34,16 +35,16 @@ const triggerEngineMove = () => {
     localCurrent = current
 }
 
-const makeNextMove = function() {
-    let {currentRoot, current, engineColor} = store.getState()
-    
+const makeNextMove = function () {
+    let { currentRoot, current, engineColor } = store.getState()
+
     var possibleMoves = current.children
 
     if (possibleMoves.length === 0) {
         return
     }
 
-    let move; 
+    let move;
     let idx = 0;
     while (idx < possibleMoves.length) {
         if (!current.played.has(possibleMoves[idx])) {
@@ -60,7 +61,7 @@ const makeNextMove = function() {
 
     var from = move.from;
     var to = move.to;
-    
+
     console.log('' + from + ':' + to);
     current = move
     store.dispatch(positionChangedAction(current))

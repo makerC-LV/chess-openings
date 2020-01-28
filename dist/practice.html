@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="chessground.06f8a462.css">
-    <link rel="stylesheet" href="theme.6fc902ae.css">
-    <link rel="stylesheet" href="chess-openings.9ad09f98.css">
+    <link rel="stylesheet" href="/chessground.06f8a462.css">
+    <link rel="stylesheet" href="/theme.6fc902ae.css">
+    <link rel="stylesheet" href="/chess-openings.9ad09f98.css">
 
     <title>Practice</title>
-<script src="chessground.06f8a462.js"></script><script src="theme.6fc902ae.js"></script><script src="chess-openings.9ad09f98.js"></script></head>
+<script src="/chessground.06f8a462.js"></script><script src="/theme.6fc902ae.js"></script><script src="/chess-openings.9ad09f98.js"></script></head>
+
 <body>
-    <nav><ul>
-        <li><a href="practice.html">Practice</a></li>
-        <li><a href="edit.html">Edit</a></li>    </ul></nav>
+    <nav>
+        <ul>
+            <li><a href="/practice.html">Practice</a></li>
+            <li><a href="/edit.html">Edit</a></li>
+        </ul>
+    </nav>
     <div class="flex-container">
         <div class="blue merida board-wrapper flex-item">
             <div id="dirty" class="cg-wrap"></div>
@@ -27,16 +32,19 @@
             <div id="fen" class="fen"></div>
         </div>
         <div id="pgn-wrapper" class="pgn-wrapper flex-item">
-            <div>
-                <div id="game-select"></div>
-                
-                <input id="autoplay" type="checkbox"><label>AutoPlay</label>
-                <input id="hidepgn" type="checkbox"><label>Hide PGN</label>
+            <div id="game-select"></div>
+            <div class="pgn-toolbar">
+
+                <div>
+                    <input id="autoplay" type="checkbox"><label>AutoPlay</label>
+                    <input id="hidepgn" type="checkbox"><label>Hide PGN</label>
+                </div>
                 <button class="fa fa-copy icon-but" id="copy"></button>
             </div>
             <div id="pgndisplay" class="pgndisplay"></div>
         </div>
     </div>
-    <script src="practice-view.598ff691.js"></script>
+    <script src="/practice-view.598ff691.js"></script>
 </body>
+
 </html>

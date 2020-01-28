@@ -15,11 +15,11 @@ import { allChildrenPlayed } from './pgnutils'
 export const displayFormattedPgn = (pgndiv, root, current, hidePGN, setCurrent) => {
     pgndiv.innerHTML = ''
     if (!hidePGN) {
-        // console.log("Current:" + current.san)
+        // console.log('displayFormattedPGN:', "Current:" + current.san)
         appendElements(root, pgndiv, 0, current, true, setCurrent);
         if (current) {
             let currentDiv = document.getElementById(nodeId(current))
-            console.log(currentDiv.offsetTop)
+            // console.log('displayFormattedPGN:', currentDiv.offsetTop)
             pgndiv.scrollTop = currentDiv.offsetTop 
             // currentDiv.scrollIntoView(false, {block:"nearest"})
 

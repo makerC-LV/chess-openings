@@ -5,7 +5,10 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "git subtree push --prefix dist origin gh-pages"
+    "push-gh-pages": "git subtree push --prefix dist origin gh-pages",
+    "watch": "parcel practice.html",
+    "build": "parcel build practice.html --public-url ./",
+    "deploy": "parcel build practice.html --public-url ./ ; git subtree push --prefix dist origin gh-pages"
   },
   "repository": {
     "type": "git",
@@ -22,6 +25,8 @@
     "chess.js": "^0.10.2",
     "pegjs": "^0.10.0",
     "redux": "^4.0.5"
+  },
+  "devDependencies": {
+    "cssnano": "^4.1.10"
   }
 }
-

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,10 +12,14 @@
 
     <title>Practice</title>
 </head>
+
 <body>
-    <nav><ul>
-        <li><a href="./practice.html">Practice</a></li>
-        <li><a href="./edit.html">Edit</a></li>    </ul></nav>
+    <nav>
+        <ul>
+            <li><a href="./practice.html">Practice</a></li>
+            <li><a href="./edit.html">Edit</a></li>
+        </ul>
+    </nav>
     <div class="flex-container">
         <div class="blue merida board-wrapper flex-item">
             <div id="dirty" class="cg-wrap"></div>
@@ -27,11 +32,13 @@
             <div id="fen" class="fen"></div>
         </div>
         <div id="pgn-wrapper" class="pgn-wrapper flex-item">
-            <div>
-                <div id="game-select"></div>
-                
-                <input id="autoplay" type="checkbox" /><label>AutoPlay</label>
-                <input id="hidepgn" type="checkbox" /><label>Hide PGN</label>
+            <div id="game-select"></div>
+            <div class="pgn-toolbar">
+
+                <div>
+                    <input id="autoplay" type="checkbox" /><label>AutoPlay</label>
+                    <input id="hidepgn" type="checkbox" /><label>Hide PGN</label>
+                </div>
                 <button class="fa fa-copy icon-but" id="copy"></button>
             </div>
             <div id="pgndisplay" class="pgndisplay"></div>
@@ -39,4 +46,5 @@
     </div>
     <script src="./views/practice-view.js"></script>
 </body>
+
 </html>

@@ -1,7 +1,6 @@
 
 import Chessground from '../assets/libs/chessground'
-import { findNext, updatePlayedStatus } from '../utils/pgnutils'
-import { isEngineMove }  from '../utils/gameutils'
+import { updatePlayedStatus } from '../utils/pgnutils'
 import {playerMadeMoveAction} from '../actions/game-actions'
 
 
